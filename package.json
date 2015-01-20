@@ -1,0 +1,19 @@
+{
+  "name": "tcp-handshake",
+  "version": "0.0.0",
+  "description": "To demonstrate the 3-way Hanshake of TCP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigneshshanmugam/tcp-handshake.git"
+  },
+  "author": "Vignesh Shanmugam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigneshshanmugam/tcp-handshake/issues"
+  },
+  "homepage": "https://github.com/vigneshshanmugam/tcp-handshake"
+}
