@@ -10,10 +10,19 @@
     "type": "git",
     "url": "https://github.com/vigneshshanmugam/tcp-handshake.git"
   },
+  "keywords": [
+    "tcp-handshake",
+    "3 way handshake"
+  ],
   "author": "Vignesh Shanmugam",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vigneshshanmugam/tcp-handshake/issues"
   },
-  "homepage": "https://github.com/vigneshshanmugam/tcp-handshake"
+  "homepage": "https://github.com/vigneshshanmugam/tcp-handshake",
+  "devDependencies": {
+    "koa": "^0.14.0",
+    "koa-logger": "^1.2.2",
+    "koa-static": "^1.4.8"
+  }
 }
