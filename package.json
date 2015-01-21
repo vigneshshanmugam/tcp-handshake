@@ -24,5 +24,9 @@
     "koa": "^0.14.0",
     "koa-logger": "^1.2.2",
     "koa-static": "^1.4.8"
+  },
+  "dependencies": {
+    "express": "^4.11.0",
+    "pcap": "^1.2.0"
   }
 }
