@@ -1,6 +1,8 @@
 // (function(d){
 	var d = document;
 	var desAddr, protocol;
+	var clientCont = d.querySelectorAll('.left-cont .result')[0];
+	var serverCont = d.querySelectorAll('.right-cont .result')[0];
 
 	var getValue = function(_for, _in) {
 	    var r;
@@ -24,12 +26,18 @@
 		protocol = getValue('protocol', packet.link.ip);
 	};
 
-	var updateFields = function(packet){
-		var addEle = d.querySelectorAll('.left-cont .addr')[0];
-		var protoEle = d.querySelectorAll('.left-cont .protocol')[0];
+	var updateFields = function(packet, side){
+		var addEle = d.createElement('p');
+		var protoEle = d.createElement('p');
 		getRequiredData(packet);
-		addEle.innerHTML = desAddr;
-		protoEle.value = protocol;		
+		if(side === 'client'){
+			addEle.innerHTML = desAddr;
+			protoEle.innerHTML = protocol;
+			clientCont.appendChild(addEle);
+			clientCont.appendChild(protoEle);
+		}else{
+
+		}
 	}
 
 // })(document);
