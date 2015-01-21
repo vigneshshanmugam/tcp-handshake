@@ -14,6 +14,10 @@ body {
   font-size: 14px;
 }
 
+.content{
+  display: none;
+}
+
 .content .submit{
 	display: block;
 }
@@ -25,3 +29,19 @@ body {
 .content .url{
 	margin-left: 5px;
 }
+
+.container{
+  width : 500px;
+  border: 1px solid #aaa;
+  margin-top  : 100px;
+  margin-left : 100px;
+  height: 300px;
+}
+
+.container .left-cont, .container .right-cont{
+  width : 50%;
+  float: left;
+  height: 100%;
+}
+
+.container

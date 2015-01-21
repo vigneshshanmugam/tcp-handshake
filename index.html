@@ -10,12 +10,43 @@
 
 <body>
   <div class="layout">
-  	<div class="content">
+  	
+    <div class="content">
   		<label class="text">Enter Url  </label> <input clas="url" type="text" value="">
   		<button class="submit">Submit</button>
   	</div>
 
+    <div class="container">
+        <div class="left-cont">
+            <div class="result">
+                <p class="addr"></p>
+                <p class="protocol"></p>
+            </div>
+        </div>
+        <div class="right-cont">
+            <div class="result">
+                
+            </div>
+        </div>
+    </div>
+
   </div>
+  <script src="/socket.io/socket.io.js"></script>
   <script src='static/app.js'></script>
+  <script src='index.js'></script>
+
+  <script type="text/javascript">
+     (function(){
+        var socket = io.connect('http://localhost:3000'),count = 0;
+        socket.on('packetReceived',function(packet){
+          // if(count){
+          //   createLayout(packet);
+          // }else{
+            updateFields(packet);
+          // }
+          // count++;
+        });
+     })();
+  </script>
 </body>
 </html>

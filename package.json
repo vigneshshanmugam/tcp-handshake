@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "express": "^4.11.0",
-    "pcap": "^1.2.0"
+    "pcap": "^1.2.0",
+    "socket.io": "^1.3.2"
   }
 }
