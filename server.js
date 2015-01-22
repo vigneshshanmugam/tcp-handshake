@@ -17,7 +17,7 @@ console.log("Listening on " + pcap_session.device_name);
 
 pcap_session.on('packet', function (raw_packet) {
     var packet = pcap.decode.packet(raw_packet),
-        data = packet.link.ip.tcp.data;
+        data = packet.link.ip.tcp;
 
     if (packet) {
         io.on('connection', function (socket) {
@@ -30,7 +30,7 @@ pcap_session.on('packet', function (raw_packet) {
 
     // console.log(packet);
 
-    // if (data) {
-    //     console.log(data.toString());
-    // }
+    if (data) {
+        console.log(data);
+    }
 });

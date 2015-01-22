@@ -1,17 +1,11 @@
 * {
   box-sizing: border-box;
-
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-tap-highlight-color: transparent;
 }
-
 
 body {
   padding: 0;
   margin: 0;
 
-  font-family: pt-serif, sans-serif;
-  font-size: 14px;
 }
 
 .content{
@@ -36,6 +30,7 @@ body {
   margin-top  : 100px;
   margin-left : 100px;
   height: 300px;
+  overflow-y : scroll;
 }
 
 .container .left-cont, .container .right-cont{
@@ -44,4 +39,14 @@ body {
   height: 100%;
 }
 
-.container
+.container .left-cont p{
+  margin: 5px;
+  font-size: 12px;
+  color: blue;
+ }
+
+.container .right-cont p{
+  margin: 5px;
+  font-size: 12px;
+  color: green;
+ }

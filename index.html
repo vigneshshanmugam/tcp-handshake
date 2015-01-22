@@ -20,8 +20,7 @@
     <div class="container">
         <div class="left-cont">
             <div class="result">
-                <p class="addr"></p>
-                <p class="protocol"></p>
+
             </div>
         </div>
         <div class="right-cont">
@@ -33,19 +32,26 @@
 
   </div>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src='static/app.js'></script>
-  <script src='index.js'></script>
 
   <script type="text/javascript">
      (function(){
         var socket = io.connect('http://localhost:3000'),count = 0;
         socket.on('packetReceived',function(packet){
-          // if(count){
-          //   createLayout(packet);
-          // }else{
-            updateFields(packet, 'client');
-          // }
-          // count++;
+        	console.log(packet);
+        	var ele = document.createElement('p');
+
+          if(count%2!==0){
+          	 $(ele).text("client");
+          	 $('.container .left-cont').append(ele);
+            // createLayout(packet);
+          }else{
+          	$(ele).text("server");
+          	$('.container .right-cont').append(ele);
+            // updateFields(packet, 'client');
+          }
+          count++;
         });
      })();
   </script>
