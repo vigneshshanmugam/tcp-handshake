@@ -7,6 +7,7 @@ Simple Visualisation of TCP-Handshake and RTT of Client and Server.
 ## Components USed
   - Express
   - Pcap (Packet Capture)
+  - socket.io (For emititng the packets to the client on the fly)
 
 ## Explanation
  - Starts a express server at port 3000.
