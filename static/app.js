@@ -37,11 +37,11 @@ var updateFields = function(packet, side){
 		$(packetDiv).append(addEle).append(protoEle);
 		clientCont.append(packetDiv);
 	}else{
-		
+
 	}
 };
 
-Utils.localStorage = {
+localStorageUtil = {
     setObject : function(key, value) {
         if (!window.localStorage || !key || !value) {return;}
         localStorage.setItem(key, JSON.stringify(value));

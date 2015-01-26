@@ -37,19 +37,15 @@
 
   <script type="text/javascript">
      (function(){
-        var socket = io.connect('http://localhost:3000'),count = 0;
+        var socket = io.connect('http://localhost:3000'), key, count = 1;
         socket.on('packetReceived',function(packet){
-        	console.log(packet);
-        	var ele = document.createElement('p');
-
-          if(count%2!==0){
-          	 $(ele).text("client");
-          	 $('.container .left-cont').append(ele);
-            // createLayout(packet);
-          }else{
-          	$(ele).text("server");
-          	$('.container .right-cont').append(ele);
-            // updateFields(packet, 'client');
+          if(count<=3){
+            if(count%2!==0){
+              key = 'client';
+            }else{
+              key = 'server';
+            }
+            localStorageUtil.setObject(key+count,packet);
           }
           count++;
         });
