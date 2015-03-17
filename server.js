@@ -13,24 +13,21 @@ server.listen(port,function(){
 	console.log('Express listening at ' + port);
 });
 
-console.log("Listening on " + pcap_session.device_name);
-
 pcap_session.on('packet', function (raw_packet) {
     var packet = pcap.decode.packet(raw_packet),
         data = packet.link.ip.tcp.data;
-
-    if (packet) {
-        io.on('connection', function (socket) {
-          socket.emit('packetReceived', packet);
-        });
-    }
-    // if (data) {
-      // console.log(packet.link.ip.tcp);
+      // console.log(pcap.print.packet(packet));
       // console.log(data.toString());
-      // console.log('-----------------------------------------------------------------------------------------');
-    // }
+      io.on('connection', function (socket) {
+        if(data){
+          socket.emit('packetReceived', packet);
+        }
+        socket.on('handshake-done',function(resp){
+          console.log(resp);
+        });
+      });
 });
 
 io.on('end',function(){
-  console.log('end');
-})
+  console.log('Connection is ended');
+});

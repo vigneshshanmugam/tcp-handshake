@@ -46,6 +46,9 @@
               key = 'server';
             }
             localStorageUtil.setObject(key+count,packet);
+          }else{
+            socket.emit('handshake-done', { data: 'TCP Handshake Done' });
+            socket.close();
           }
           count++;
         });
